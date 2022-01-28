@@ -32,7 +32,7 @@ public class Animal {
         nombrec=nc;
     }
 
-    public String getImei(){
+    public String getNombrec(){
         return nombrec;
     } 
     
@@ -84,16 +84,24 @@ public class Animal {
         return vida;
     }
     
+    public boolean detectar(String nc){
+        boolean n=false;
+        if(nc==nombrec){
+            n=true;
+        }
+        return n;
+    }
+    
   @Override
   public String toString(){
     return "Nombre Cientifico="+nombrec+
-            "\n Nombre Comun="+nombre+
-            "\n Habitat="+habitat+
-            "\n Alimentacion="+alimentacion+
-            "\n Rasgos="+rasgos+
-            "\n Distribucion Geografica="+geo+
-            "\n Vida="+vida+
-            "\n"+"\n";
+            "\n    Nombre Comun="+nombre+
+            "\n    Habitat="+habitat+
+            "\n    Alimentacion="+alimentacion+
+            "\n    Rasgos="+rasgos+
+            "\n    Distribucion Geografica="+geo+
+            "\n    Vida="+vida+
+            "\n";
   }
      
 }

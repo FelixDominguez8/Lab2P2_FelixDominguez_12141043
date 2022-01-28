@@ -19,6 +19,9 @@ public class Lab2P2_FelixDominguez_12141043 {
     public static void main(String[] args) {
         // TODO code application logic here
         ArrayList animales=new ArrayList();
+        animales.add(new Animal("Phocidea","Foca","Antartida","Pescados","Gordo","Zonas heladas",30));
+        animales.add(new Animal("Hydrocoerus","Capybara","Jungla","Vegetales","Peludo","America del sur",20));
+        animales.add(new Animal("Anatinae","Pato","Lagos","Granos","Pico plano","Zona norte",10));
         char resp='s';
         while(resp=='s' || resp=='S'){
             System.out.println();
@@ -56,15 +59,34 @@ public class Lab2P2_FelixDominguez_12141043 {
                     break;
                 }
                 case 3:{
+                    lea.nextLine();
+                    System.out.println("Ingrese el nombre cientifico de animal que desea eliminar");
+                    String tempnom=lea.nextLine();
+                    for(int i=0;i<animales.size();i++){
+                        if(((Animal)animales.get(i)).getNombrec()==tempnom){
+                            animales.remove(i);
+                            System.out.println("El animal se ha eliminado");
+                        }
+                    }
+                    System.out.println(((Animal)animales.get(0)).getNombrec());
+                    System.out.println(tempnom);
                     break;
                 }
                 case 4:{
+                    String salida="";
+                    for(Object temp: animales){
+                        if(temp instanceof Animal){
+                            salida+=""+animales.indexOf(temp)+" - "+temp+"\n";
+                        }
+                    }
+                    System.out.println(salida);
                     break;
                 }
                 case 5:{
                     break;
                 }
                 case 6:{
+                    resp='n';
                     break;
                 }
             }
