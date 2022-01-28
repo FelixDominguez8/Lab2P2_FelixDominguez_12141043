@@ -56,23 +56,61 @@ public class Lab2P2_FelixDominguez_12141043 {
                     break;
                 }
                 case 2:{
+                    lea.nextLine();
+                    System.out.println("Ingres el nombre cientifico del animal que desea modificar");
+                    String nc=lea.nextLine();
+                    System.out.println();
                     break;
                 }
                 case 3:{
                     lea.nextLine();
-                    System.out.println("Ingrese el nombre cientifico de animal que desea eliminar");
+                    System.out.println("Ingrese el nombre cientifico del animal que desea eliminar");
                     String tempnom=lea.nextLine();
                     for(int i=0;i<animales.size();i++){
-                        if(((Animal)animales.get(i)).getNombrec()==tempnom){
+                        if(((Animal)animales.get(i)).getNombrec().equals(tempnom)){
                             animales.remove(i);
                             System.out.println("El animal se ha eliminado");
                         }
                     }
-                    System.out.println(((Animal)animales.get(0)).getNombrec());
-                    System.out.println(tempnom);
+                     
                     break;
                 }
                 case 4:{
+                    System.out.println("1) Por posicion de lista");
+                    System.out.println("2) Lista completa");
+                    System.out.println("3) Por posicion de lista");
+                    System.out.println("Ingrese la opcion que desee: ");
+                    int op=lea.nextInt();
+                    switch(op){
+                        case 1:{
+                            System.out.println("Ingrese la posicion");
+                            int pos=lea.nextInt();
+                            System.out.println(pos+" - "+animales.get(pos));
+                            break;
+                        }
+                        case 2:{
+                            String salida="";
+                            for(Object temp: animales){
+                                if(temp instanceof Animal){
+                                    salida+=""+animales.indexOf(temp)+" - "+temp+"\n";
+                                }
+                            }
+                            System.out.println(salida);
+                            break;
+                        }
+                        case 3:{
+                            lea.nextLine();
+                            System.out.println("Ingrese el nombre cientifico del animal que desea listar: ");
+                            String tempnom=lea.nextLine();
+                            for(int i=0;i<animales.size();i++){
+                                if(((Animal)animales.get(i)).getNombrec().equals(tempnom)){
+                                    System.out.println(i+" - "+animales.get(i));
+                                }
+                            }
+                            break;
+                        }
+                    }
+                    
                     String salida="";
                     for(Object temp: animales){
                         if(temp instanceof Animal){
@@ -83,6 +121,13 @@ public class Lab2P2_FelixDominguez_12141043 {
                     break;
                 }
                 case 5:{
+                    System.out.println("Ingrese el animal que va a ser alimentado: ");
+                    int al=lea.nextInt();
+                    System.out.println("Ingrese el animal que va a ser devorado: ");
+                    int de=lea.nextInt();
+                    int to=((Animal)animales.get(al)).getVida() + ((Animal)animales.get(de)).getVida();
+                    ((Animal)animales.get(al)).setVida(to);
+                    animales.remove(de);
                     break;
                 }
                 case 6:{

@@ -102,6 +102,5 @@ public class Animal {
             "\n    Distribucion Geografica="+geo+
             "\n    Vida="+vida+
             "\n";
-  }
-     
+  } 
 }
