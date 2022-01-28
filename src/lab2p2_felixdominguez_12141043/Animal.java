@@ -19,7 +19,13 @@ public class Animal {
     private int vida;
     
     public Animal(String nc, String n, String h, String a, String r, String g, int v){
-        
+        setNombrec(nc);
+        setNombre(n);
+        setHabitat(h);
+        setAlimentacion(a);
+        setRasgos(r);
+        setGeo(g);
+        setVida(v);
     }
     
     public void setNombrec(String nc){
@@ -62,11 +68,32 @@ public class Animal {
         return rasgos;
     } 
     
-    public void setGeo(String nc){
-        nombrec=nc;
+    public void setGeo(String g){
+        geo=g;
     }
 
-    public String getImei(){
-        return nombrec;
+    public String getGeo(){
+        return geo;
     } 
+    
+    public void setVida(int v){
+        vida=v;
+    }
+
+    public int getVida(){
+        return vida;
+    }
+    
+  @Override
+  public String toString(){
+    return "Nombre Cientifico="+nombrec+
+            "\n Nombre Comun="+nombre+
+            "\n Habitat="+habitat+
+            "\n Alimentacion="+alimentacion+
+            "\n Rasgos="+rasgos+
+            "\n Distribucion Geografica="+geo+
+            "\n Vida="+vida+
+            "\n"+"\n";
+  }
+     
 }

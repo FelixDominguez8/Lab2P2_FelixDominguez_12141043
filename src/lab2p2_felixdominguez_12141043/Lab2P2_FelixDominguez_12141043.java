@@ -34,6 +34,22 @@ public class Lab2P2_FelixDominguez_12141043 {
             System.out.println();
             switch(opcion){
                 case 1:{
+                    lea.nextLine();
+                    System.out.println("Ingrese el nombre cientifico del animal: ");
+                    String nomc=lea.nextLine();
+                    System.out.println("Ingrese el nombre comun del animal: ");
+                    String nom=lea.nextLine();
+                    System.out.println("Ingrese el habitat del animal: ");
+                    String hab=lea.nextLine();
+                    System.out.println("Ingrese la alimentacion del animal: ");
+                    String ali=lea.nextLine();
+                    System.out.println("Ingrese los rasgos del animal: ");
+                    String ras=lea.nextLine();
+                    System.out.println("Ingrese la distribucion geografica del animal: ");
+                    String geo=lea.nextLine();
+                    System.out.println("Ingrese la vida del animal: ");
+                    int vi=lea.nextInt();
+                    animales.add(new Animal(nomc,nom,hab,ali,ras,geo,vi));
                     break;
                 }
                 case 2:{
